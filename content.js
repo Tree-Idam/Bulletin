@@ -15,7 +15,6 @@ window.CHURCH_CONTENT = {
       "예배로의 부름",
       "신앙고백",
       "찬양 : 찬송가 88장",
-      <img src="https://blog.kakaocdn.net/dna/rzfnt/btrl1KoZY6x/AAAAAAAAAAAAAAAAAAAAAPqFsd56AfuKPxTc3c0T2w0--CFHVUpF6kpfmSWCtAb3/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1788188399&allow_ip=&allow_referer=&signature=zt6oAhvr8kZevVDSH0QwuKt8hA4%3D">
       "대표기도 : 최덕성 목사",
       "봉헌",
       "교회소식",
