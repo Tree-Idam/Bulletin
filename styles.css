@@ -1,0 +1,21 @@
+
+body{margin:0;background:#f4f7fa;color:#17385f;font-family:Arial,'Noto Sans KR',sans-serif}
+*{box-sizing:border-box} a{text-decoration:none;color:inherit}
+.site{max-width:760px;margin:auto;background:white;min-height:100vh}
+header{height:72px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #e5ebf1;position:sticky;top:0;background:#fff;z-index:10}
+header a{font-weight:800;font-size:22px}
+.hero{padding:54px 24px;text-align:center;background:linear-gradient(135deg,#eef6fb,#fff)}
+.hero h1{font-size:54px;margin:0;color:#28598a;font-family:serif;font-style:italic}.hero p{color:#5f92c1;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:22px}
+.card{border:2px solid #dbe5ee;border-radius:18px;padding:28px 16px;text-align:center;min-height:190px;display:flex;flex-direction:column;justify-content:center}
+.card.dark{background:#17385f;color:#fff;border-color:#17385f}.card.green{border-color:#b9dbcf}
+.card h2{margin:0 0 10px}.card p{margin:0;color:#65768a;line-height:1.6}.dark p{color:#edf4fa}
+.pagehead{padding:34px 22px 20px;border-bottom:1px solid #e5ebf1}.pagehead h1{margin:16px 0 8px;font-size:34px}
+.back{display:inline-block;background:#edf3f8;padding:9px 13px;border-radius:999px;font-weight:700}
+.body{padding:22px}.box{border:1px solid #dfe7ef;border-radius:18px;padding:22px;margin-bottom:16px;box-shadow:0 8px 24px rgba(24,54,90,.05)}
+.date{color:#4f87bd;font-weight:800;font-size:14px}.scripture{padding:16px;background:#f6f9fc;border-left:4px solid #7aa8d2;line-height:1.8}
+ol{padding-left:22px}li{padding:8px 0;line-height:1.6}.note{white-space:pre-line;line-height:1.95}
+.welcome{background:linear-gradient(145deg,#153c68,#1c4d7b);color:#fff;text-align:center}.welcome p{color:#eef6ff}
+.news{padding:15px 0;border-bottom:1px solid #e5ebf1}.news:last-child{border-bottom:0}.news p{margin:6px 0 0;line-height:1.7;color:#42586f}
+footer{text-align:center;padding:26px;color:#8391a0;border-top:1px solid #e5ebf1}
+@media(max-width:520px){.hero h1{font-size:42px}.grid{gap:10px;padding:14px 8px}.card{min-height:170px;padding:20px 10px}.card h2{font-size:18px}.card p{font-size:12px}}
