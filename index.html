@@ -1,4 +1,78 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>홈 | 횃불교회</title><link rel="stylesheet" href="styles.css"></head><body><div class="site"><header><a href="index.html">✝ 횃불교회</a></header>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>홈 | 횃불교회</title><link rel="stylesheet" href="styles.css">
+
+<style>
+#church-lock {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #f4f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.church-lock-box {
+  width: 100%;
+  max-width: 360px;
+  background: white;
+  border-radius: 24px;
+  padding: 42px 28px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(20, 50, 80, 0.08);
+  font-family: inherit;
+}
+
+.church-lock-icon {
+  font-size: 42px;
+  color: #17385f;
+  margin-bottom: 12px;
+}
+
+.church-lock-box h2 {
+  font-size: 27px;
+  color: #17385f;
+  margin: 0 0 12px;
+}
+
+.church-lock-box p {
+  color: #66778b;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+#church-password {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d9e2ec;
+  border-radius: 12px;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 8px;
+  box-sizing: border-box;
+}
+
+#church-unlock {
+  width: 100%;
+  margin-top: 14px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #17385f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#church-error {
+  color: #d64545;
+  font-size: 13px;
+  margin: 14px 0 0;
+  min-height: 20px;
+}
+</style>
+</head><body><div class="site"><header><a href="index.html">✝ 횃불교회</a></header>
 <main>
 <section class="hero"><h2>횃불교회에 오신 여러분을 환영합니다!</h2><p>"GOD loves you."</p><div>— ♡ —</div></section>
 <section class="grid">
@@ -7,4 +81,63 @@
 <a class="card dark" href="welcome.html"><h2>횃불교회 소개</h2><p>서로를 위해 기도해요.</p></a>
 <a class="card" href="news.html"><h2>교회 소식</h2><p>교회의 새로운 소식을 확인해요.</p></a>
 </section>
-</main><footer>© 2026 횃불교회. All rights reserved.</footer></div></body></html>
+</main><footer>© 2026 횃불교회. All rights reserved.</footer></div>
+
+<script>
+(function () {
+  const PASSWORD = "9789";
+
+  // 현재 브라우저 탭에서 인증했는지 확인
+  if (sessionStorage.getItem("church_access") === "yes") {
+    return;
+  }
+
+  // 기존 화면을 가리고 비밀번호 입력창 표시
+  const overlay = document.createElement("div");
+  overlay.id = "church-lock";
+  overlay.innerHTML = `
+    <div class="church-lock-box">
+      <div class="church-lock-icon">✝</div>
+      <h2>횃불교회</h2>
+      <p>온라인 주보에 오신 것을 환영합니다.</p>
+      <input
+        type="password"
+        id="church-password"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        maxlength="4"
+        placeholder="비밀번호 4자리"
+        autocomplete="off"
+      >
+      <button id="church-unlock">입장하기</button>
+      <p id="church-error" aria-live="polite"></p>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const input = document.getElementById("church-password");
+  const button = document.getElementById("church-unlock");
+  const error = document.getElementById("church-error");
+
+  function unlock() {
+    if (input.value === PASSWORD) {
+      sessionStorage.setItem("church_access", "yes");
+      overlay.remove();
+    } else {
+      error.textContent = "비밀번호가 올바르지 않습니다.";
+      input.value = "";
+      input.focus();
+    }
+  }
+
+  button.addEventListener("click", unlock);
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") unlock();
+  });
+
+  input.focus();
+})();
+</script>
+
+</body></html>
