@@ -71,6 +71,27 @@
   margin: 14px 0 0;
   min-height: 20px;
 }
+  
+/* 입장하기 버튼 아래 포스터 */
+.church-poster {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* 화면이 작은 휴대폰에서도 스크롤 가능 */
+#church-lock {
+  overflow-y: auto;
+}
+
+.church-lock-box {
+  margin: auto;
+}
+
 </style>
 </head><body><div class="site"><header><a href="index.html">✝ 횃불교회</a></header>
 <main>
@@ -109,8 +130,16 @@
         placeholder="비밀번호 4자리"
         autocomplete="off"
       >
-      <button id="church-unlock">입장하기</button>
-      <p id="church-error" aria-live="polite"></p>
+     
+<button id="church-unlock">입장하기</button>
+<p id="church-error" aria-live="polite"></p>
+
+<img
+  src="poster.png"
+  alt="횃불교회 교회이전 감사예배 안내"
+  class="church-poster"
+>
+
     </div>
   `;
 
